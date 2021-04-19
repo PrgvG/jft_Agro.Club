@@ -1,0 +1,120 @@
+.container {
+  grid-area: 1 / 1 / 2 / 3;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.04);
+  padding: 22px 20px;
+  min-width: 920px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  padding-bottom: 18px;
+}
+.title__logo {
+  height: 18px;
+  width: 18px;
+  padding: 3px;
+}
+.title__text {
+  padding: 0 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #037bff;
+}
+.options {
+  display: flex;
+}
+.options__block {
+  border: none;
+  padding: 0 12px 0 0;
+  display: flex;
+  margin: 0;
+}
+.legend {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #a8b8ca;
+}
+.button {
+  margin: 16px 12px 24px 0px;
+  padding: 3px 15px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #037bff;
+  border: 1px solid #037bff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+.button:hover:enabled {
+  text-decoration: underline;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.button--checked {
+  color: #ffffff;
+  background-color: #037bff;
+}
+.check-box__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 20px 1px 28px 0;
+  cursor: pointer;
+}
+.check-box {
+  visibility: hidden;
+}
+.check-box__sqr {
+  height: 20px;
+  width: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.check-box__label:hover {
+  text-decoration: underline;
+}
+.check-box__sqr:hover {
+  border: 1px solid #bbbbbb;
+}
+@media (max-width: 1024px) {
+  .container {
+    min-width: 0;
+  }
+}
+@media (max-width: 890px) {
+  .container {
+    padding: 11px 10px;
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+  }
+  .options__block {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+  }
+  .button {
+    margin: 8px 6px 0px 0px;
+  }
+}
