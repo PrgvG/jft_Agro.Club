@@ -73,45 +73,32 @@ export const useProductList = () => {
   const updateFilter = useCallback((filter = {}) => dispatch({ type: 'filter:change', payload: filter }), [])
   const resetFilter = useCallback(() => dispatch({ type: 'filter:reset' }), [])
 
-  // решил доработать то что было, оно ведь работает ;-)
-  const performRequest = useCallback(() => {
-    dispatch({ type: 'request:start' })
-    // prettier-ignore
-    const serializeFilter = filter => [
-      ...filter.category.map(categoryId => `category[]=${categoryId}`),
-      `isNew=${filter.isNew}`,`isLimited=${filter.isLimited}`,`search=${filter.search}`
-    ].join('&')
-
-    fetch(`/api/product?${serializeFilter(state.filter)}`)
-      .then(res => {
-        if (!res.ok || res.status !== 200) {
+  // решил доработать то что было, оно ведь работало ;-)
+  const performRequest = useCallback(
+    (retries = 3) => {
+      dispatch({ type: 'request:start' })
+      const retryingFetch = url =>
+        fetch(url).then(res => {
+          if (res.ok) return res.json()
+          if (retries > 0) performRequest(retries - 1)
           throw new Error(`Request failed with status code ${res.status}`)
-        }
-        return res.json()
-      })
-      .then(data => dispatch({ type: 'request:success', payload: data.results }))
-      .catch(() => dispatch({ type: 'request:error' }))
-  }, [state.filter])
-
-  // запрашиваю список категорий, если выпадает в ошибку - меняю статус, а в UI отображается компонент Error (у него есть кнопка - performRequest)
-  // не в общей зависимости с /api/product потому что зачем каждый раз спрашивать категории
-  // хотя я бы и выдачу фильровал на пользователе, а не на сервере, но я много чего еще не знаю, может так и лучше
-  useEffect(() => {
-    fetch('/api/category')
-      .then(res => {
-        if (!res.ok || res.status !== 200) {
-          throw new Error(`Request failed with status code ${res.status}`)
-        }
-        return res.json()
-      })
-      .then(data => dispatch({ type: 'cat-request:success', payload: data }))
-      .catch(() => dispatch({ type: 'cat-request:error' }))
-  }, [performRequest])
+        })
+      // prettier-ignore
+      const serializeFilter = filter =>
+        [...filter.category.map(categoryId => `category[]=${categoryId}`), `isNew=${filter.isNew}`, `isLimited=${filter.isLimited}`, `search=${filter.search}`].join('&')
+      retryingFetch(`/api/product?${serializeFilter(state.filter)}`)
+        .then(data => dispatch({ type: 'request:success', payload: data.results }))
+        .catch(() => dispatch({ type: 'request:error' }))
+      retryingFetch('/api/category')
+        .then(data => dispatch({ type: 'cat-request:success', payload: data }))
+        .catch(() => dispatch({ type: 'cat-request:error' }))
+    },
+    [state.filter]
+  )
 
   useEffect(() => {
     performRequest()
   }, [performRequest])
-  // в обоих эффектах в зависимостях performRequest, сделал так, чтобы не плодить разные инициаторы запросов
 
   return {
     ...state,
