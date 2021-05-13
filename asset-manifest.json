@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/%7Bapp-name%7D/static/css/main.e046a6d7.chunk.css",
+    "main.js": "/%7Bapp-name%7D/static/js/main.ed50523b.chunk.js",
+    "main.js.map": "/%7Bapp-name%7D/static/js/main.ed50523b.chunk.js.map",
+    "runtime-main.js": "/%7Bapp-name%7D/static/js/runtime-main.8babdd7c.js",
+    "runtime-main.js.map": "/%7Bapp-name%7D/static/js/runtime-main.8babdd7c.js.map",
+    "static/js/2.ad41fdc0.chunk.js": "/%7Bapp-name%7D/static/js/2.ad41fdc0.chunk.js",
+    "static/js/2.ad41fdc0.chunk.js.map": "/%7Bapp-name%7D/static/js/2.ad41fdc0.chunk.js.map",
+    "index.html": "/%7Bapp-name%7D/index.html",
+    "static/css/main.e046a6d7.chunk.css.map": "/%7Bapp-name%7D/static/css/main.e046a6d7.chunk.css.map",
+    "static/js/2.ad41fdc0.chunk.js.LICENSE.txt": "/%7Bapp-name%7D/static/js/2.ad41fdc0.chunk.js.LICENSE.txt",
+    "static/media/Barley.d0752ec2.svg": "/%7Bapp-name%7D/static/media/Barley.d0752ec2.svg",
+    "static/media/Canola.87d068d5.svg": "/%7Bapp-name%7D/static/media/Canola.87d068d5.svg",
+    "static/media/Corn.3131e41f.svg": "/%7Bapp-name%7D/static/media/Corn.3131e41f.svg",
+    "static/media/FiltersLogo.5067160f.svg": "/%7Bapp-name%7D/static/media/FiltersLogo.5067160f.svg",
+    "static/media/Oats.1549f433.svg": "/%7Bapp-name%7D/static/media/Oats.1549f433.svg",
+    "static/media/SearchLogo.6ee5abe4.svg": "/%7Bapp-name%7D/static/media/SearchLogo.6ee5abe4.svg",
+    "static/media/Soybeans.cdfe6b75.svg": "/%7Bapp-name%7D/static/media/Soybeans.cdfe6b75.svg",
+    "static/media/Wheat.ba2ac08f.svg": "/%7Bapp-name%7D/static/media/Wheat.ba2ac08f.svg",
+    "static/media/check.ca86e428.svg": "/%7Bapp-name%7D/static/media/check.ca86e428.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8babdd7c.js",
+    "static/js/2.ad41fdc0.chunk.js",
+    "static/css/main.e046a6d7.chunk.css",
+    "static/js/main.ed50523b.chunk.js"
+  ]
+}
