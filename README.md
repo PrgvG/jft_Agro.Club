@@ -1,12 +1,13 @@
-## Создание проекта по макету
+## Jnr test task
 
-### Макет можно найти тут:
-
+Ссылка на [задание](https://github.com/Agro-Club/junior-frontend-test)
 Макет [в Фигме](https://www.figma.com/file/sOoPi2gOZvfqjOQHa9awMC/Agro.Club-Home-project-Junior-Dev).
+
+Ссылка на [результат](https://prgvg.github.io/jft_Agro.Club/)
 
 ### Технологии:
 
-Нативный CSS в связке с React и React Hooks
+Нативный CSS в связке с React и React Hooks.
 
 ---
 
