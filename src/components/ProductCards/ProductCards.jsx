@@ -7,10 +7,7 @@ import Oats from './Imgs/Oats.svg'
 import Soybeans from './Imgs/Soybeans.svg'
 import Wheat from './Imgs/Wheat.svg'
 
-// компонент с выдачей карточек товаров, рендерится из массива данных
-// ну и проверка само собой, что хоть что-то найдено
 function ProductCards({ items }) {
-  // проставляю картинку в зависимости от категории пришедшей в ответе
   function logoDefiner(type) {
     switch (type) {
       case 'Barley':
@@ -34,7 +31,7 @@ function ProductCards({ items }) {
     <div className="cards-container">
       {items.map(item => (
         <div className="card" key={item.id}>
-          <img className="card__img" src={logoDefiner(item.categoryName)} />
+          <img className="card__img" width="116px" src={logoDefiner(item.categoryName)} alt="product img" />
           <div className="card__info">
             <span className="category-name">{item.categoryName}</span>
             <span className="product-name">{item.name}</span>

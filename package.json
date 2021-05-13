@@ -1,5 +1,6 @@
 {
   "name": "junior-frontend-test",
+  "homepage" : "https://{your_github_username}.github.io/{app-name}",
   "description": "Agro.Club Junior Frontend Dev Home Project.",
   "version": "0.1.0",
   "private": true,

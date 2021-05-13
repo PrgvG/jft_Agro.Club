@@ -2,7 +2,6 @@ import React from 'react'
 import logo from './Imgs/SearchLogo.svg'
 import './Header.css'
 
-// простой хеддер с инпутом
 function Header({ handler }) {
   return (
     <header className="header">

@@ -102,6 +102,9 @@
   }
 }
 @media (max-width: 890px) {
+  .title {
+    padding: 0;
+  }
   .container {
     padding: 11px 10px;
   }
@@ -112,9 +115,18 @@
   .options__block {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 18px;
+    padding: 0;
+  }
+  .legend {
+    padding-top: 18px;
+    padding-bottom: 9px;
   }
   .button {
-    margin: 8px 6px 0px 0px;
+    margin: 4px;
+    padding: 3px 10px;
+    flex-grow: 1;
+  }
+  .check-box__label {
+    margin: 0;
   }
 }

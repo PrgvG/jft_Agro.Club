@@ -19,9 +19,6 @@ const ProductList = () => {
     updateFilter({ search: e.target.value })
   }
   const pageReloadHandler = () => resetFilter()
-
-  // хотелось разбить на компоненты, плюс добавил проверку на наличие ошибок при fetch запросах
-
   return (
     <>
       <Header handler={handleSearchUpdate} />

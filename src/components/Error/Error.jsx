@@ -1,7 +1,6 @@
 import React from 'react'
 import './Error.css'
 
-// простой компонент с действием на кнопке
 function Error({ handler }) {
   return (
     <div className="error">

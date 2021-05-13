@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useReducer } from 'react'
 
-// добавил поля для хранения категорий, которые придут от сервера и состояния запроса категорий, вроде ничего не забыл)
 const initialState = {
   filter: {
     isNew: false,
@@ -72,8 +71,6 @@ export const useProductList = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const updateFilter = useCallback((filter = {}) => dispatch({ type: 'filter:change', payload: filter }), [])
   const resetFilter = useCallback(() => dispatch({ type: 'filter:reset' }), [])
-
-  // решил доработать то что было, оно ведь работало ;-)
   const performRequest = useCallback(
     (retries = 3) => {
       dispatch({ type: 'request:start' })
@@ -98,7 +95,7 @@ export const useProductList = () => {
 
   useEffect(() => {
     performRequest()
-  }, [performRequest])
+  }, [performRequest, state.filter.search])
 
   return {
     ...state,

@@ -3,8 +3,6 @@ import './Filters.css'
 import logo from './imgs/FiltersLogo.svg'
 import check from './imgs/check.svg'
 
-// блок фильтров, где 1 кнопка заранее задана (та что обнуляет выбранный фильтр), а остальные рендерятся из массива пришедшего от fetch запроса
-// плюс всякие проверки на наличие конкретной культуры в выдаче, чтобы сделать кнопку неактивной
 function Filters({ clearHandler, handler, categories, isLimitedHandler, isNewHandler, items, filter }) {
   return (
     <div className="container">
