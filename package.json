@@ -1,6 +1,6 @@
 {
   "name": "junior-frontend-test",
-  "homepage" : "https://{your_github_username}.github.io/{app-name}",
+  "homepage": "https://prgvg.github.io/jft_Agro.Club",
   "description": "Agro.Club Junior Frontend Dev Home Project.",
   "version": "0.1.0",
   "private": true,
@@ -20,6 +20,7 @@
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
     "express": "^4.17.1",
+    "gh-pages": "^3.1.0",
     "ip": "^1.1.5",
     "nconf": "^0.11.2",
     "nestjs-pino": "^1.4.0",
@@ -66,7 +67,9 @@
     "start": "set ESLINT_NO_DEV_ERRORS=true && concurrently yarn:client yarn:server",
     "client": "react-scripts start",
     "server": "set NODE_ENV=development && nest start -p server/tsconfig.build.json --watch",
-    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet --fix",
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
